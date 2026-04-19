@@ -1,0 +1,1 @@
+This is the project for JavaScript practice for Rock Paper Scissors game
