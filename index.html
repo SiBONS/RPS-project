@@ -10,12 +10,12 @@
    <nav id="nav">
     <ul>
         <div class="first-link">
-             <li><h1>Rock Paper Scissors</h1></li>
+             <li><h1>ROCK PAPER SCISSORS</h1></li>
         </div>
        <div class="second-link">
-            <li>ABOUT</li>
-            <li>RULES</li>
-            <li>THE GAME</li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">RULES</a></li>
+            <li><a href="#">PLAY</a></li>
        </div>
     </ul>
    </nav>
@@ -29,5 +29,26 @@
             <p>A simultaneous, zero-sum game, it has three possible outcomes: a draw, a win, or a loss. A player who decides to play rock will beat another player who chooses scissors ("rock crushes scissors" or "breaks scissors" or sometimes "blunts scissors"), but will lose to one who has played paper ("paper covers rock"); a play of paper will lose to a play of scissors ("scissors cuts paper"). If both players choose the same shape, the game is tied, but is usually replayed until there is a winner.</p>
         </section>
    </section>
+   <section id="game">
+        <h2>CHOOSE YOUR WEAPON!</h2>
+        <div id="selections">
+             <section id="rock">
+            <img id="rock-img" src="images/rock.png" alt="">
+        </section>
+        <section id="paper">
+            <img id="paper-img" src="images/paper.png" alt="">
+        </section>
+        <section id="scissors">
+            <img id="scissors-img" src="images/scissor.png" alt="">
+        </section>
+        </div>
+        <p id="result"></p>
+        <h2>SCORE</h2>
+   <section id="score">
+        <div id="user-score"></div>
+        <div id="cpu-score"></div>
+   </section>
+   </section>
+   <script src="script.js" defer></script>
 </body>
 </html>
