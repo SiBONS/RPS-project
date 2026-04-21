@@ -129,14 +129,16 @@ a {
     margin-bottom: 1em;
 }
 
-#selections section:hover {
-    transition: 100ms ease-in;
-    border: 5px solid rgb(26, 143, 197);
-}
 
 #selections img {
     max-width: 160px;
 
+}
+
+#selections img:hover {
+    transform: scale(1.1);
+    transition: 200ms ease-in-out;
+   
 }
 
 #score {
