@@ -7,18 +7,39 @@ let humanScore = document.getElementById("user-score");
 let cpuScore = document.getElementById("cpu-score");
 let result = document.getElementById("result");
 
+// this function sets out the display of the result and returns an empty string
+function revertDefault() {
+    setTimeout(() => {
+        result.innerHTML = "";}, 1000);
+    }
+
+rockChoice.addEventListener("click", function() {
+    result.innerHTML = "ROCK!";
+});
+
+
+    
+
+
+paperChoice.addEventListener("click", function() {
+    result.innerHTML = "Paper!";
+    revertDefault();
+})
+
+
+
+
 function changeResult() {
-        let human = humanScore.innerHTML;
-        let cpu = cpuScore.innerHTML;
-     human = 5;
-     cpu = 0;
+    result.innerHTML = "The first one to get to 5 points, wins!"
+        let human = humanScore.innerHTML = 0;
+        let cpu = cpuScore.innerHTML = 0;
+    
     if(human === 5) {
        return result.innerHTML = "You win! CPU is a loser."
     }  else if(cpu === 5) {
          return result.innerHTML = "You lose! CPU is a winner."
     }
 }
-
 changeResult();
 
 
