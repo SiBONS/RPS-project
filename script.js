@@ -3,62 +3,86 @@ let rockChoice = document.getElementById("rock");
 let paperChoice = document.getElementById("paper");
 let scissorsChoice = document.getElementById("scissors");
 //moram da deklarisem varijable za score za human i cpu
-let humanScore = document.getElementById("user-score");
-let cpuScore = document.getElementById("cpu-score");
+
+// mora da se odvaja sam element od score-a. Ako se spajaju vrednosti i elementi, nece da radi.
+let humanScoreElement = document.getElementById("user-score");
+let cpuScoreElement = document.getElementById("cpu-score");
+
+let humanScore = 0;
+let cpuScore = 0;
+
+humanScoreElement.innerHTML = humanScore;
+cpuScoreElement.innerHTML = cpuScore;
+
 let result = document.getElementById("result");
 
-// this function sets out the display of the result and returns an empty string
-function revertDefault() {
-    setTimeout(() => {
-        result.innerHTML = "";}, 1000);
-    }
+// this function sets out the display of the result and returns an empty string with a timeout
+// function revertDefault() {
+//     setTimeout(() => {
+//         result.innerHTML = "";}, 1000);
+//     }
+
+// paperChoice.addEventListener("click", function() {
+//     result.innerHTML = "Paper!";
+//     revertDefault();
+// })
+
+function cpuPlayer() {
+    let cpuChoice = Math.floor(Math.random() * 3 + 1);
+    if(cpuChoice === 1) {
+    rockChoice.style.backgroundColor = "yellow";
+    return "rock";
+}   else if(cpuChoice === 2) {
+    paperChoice.style.backgroundColor = "green";
+    return "paper";
+} else {
+    scissorsChoice.style.backgroundColor = "orange";
+   return "scissors";
+}
+}
 
 rockChoice.addEventListener("click", function() {
-    result.innerHTML = "ROCK!";
-});
+    let cpu = cpuPlayer();
+    if(cpu === "rock") {
+        result.innerHTML = "It is a tie! No points";
+    }else if(cpu === "scissors") {
+        result.innerHTML = "You won! Rock beats scissors!";
+        humanScoreElement.innerHTML++;
+    } else {
+        result.innerHTML = "You lose! Paper beats rock!";
+        cpuScoreElement.innerHTML++;
 
-
-    
-
+    }
+})
 
 paperChoice.addEventListener("click", function() {
-    result.innerHTML = "Paper!";
-    revertDefault();
+    let cpu = cpuPlayer();
+    if(cpu === "rock") {
+        result.innerHTML = "You won! Paper beats rock!";
+        humanScoreElement.innerHTML++;
+    }else if(cpu === "scissors") {
+        result.innerHTML = "You lose! Scissors cut out the hell of ya!";
+        cpuScoreElement.innerHTML++;
+    } else {
+        result.innerHTML = "No points. Paper VS paper.";
+
+    }
+})
+
+scissorsChoice.addEventListener("click", function() {
+    let cpu = cpuPlayer();
+    if(cpu === "rock") {
+        result.innerHTML = "You lose! Rock destroyed you!";
+        cpuScoreElement.innerHTML++;
+    }else if(cpu === "scissors") {
+        result.innerHTML = "It is a tie! No points";
+    } else {
+        result.innerHTML = "You won. Cuting the paper weeee!";
+        humanScoreElement.innerHTML++;
+
+    }
 })
 
 
 
 
-function changeResult() {
-    result.innerHTML = "The first one to get to 5 points, wins!"
-        let human = humanScore.innerHTML = 0;
-        let cpu = cpuScore.innerHTML = 0;
-    
-    if(human === 5) {
-       return result.innerHTML = "You win! CPU is a loser."
-    }  else if(cpu === 5) {
-         return result.innerHTML = "You lose! CPU is a winner."
-    }
-}
-changeResult();
-
-
-
-// function rockPaperScissors (rockChoice, paperChoice, scissorsChoice) {
-//     switch(rockChoice) {
-//         case paperChoice:
-//         result.innerHTML = "You lose! Paper beats rock!";
-//         cpuScore++;
-//         break;
-//         case rockChoice:
-//             result.innerHTML = "It's a tie!";
-//         break;
-//         case scissorsChoice:
-//         result.innerHTML = "You win! Rock beat scissors!";
-//         humanScore++;
-//     }
-//     switch(paperChoice) {
-//         case paperChoice
-//     }
-
-// }
