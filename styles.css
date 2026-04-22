@@ -6,14 +6,16 @@
 
 html {
     font-size: 0.875rem;
+    scroll-behavior: smooth;
+    transition: 300ms;
 }
 
 body {
-    background-color: aliceblue;
+    background-color: rgb(50, 75, 97);
      font-family: "Merriweather Sans", sans-serif;
      font-weight: 300;
      line-height: 1.5;
-     color: #3d3d3d;
+     color: aliceblue;
      padding: 0;
      margin: 0;
 }
@@ -24,7 +26,8 @@ a {
 }
 
 #nav {
-    background-color: #bfe2f2;
+    color: aliceblue;
+    background-color: #b68e39;
     max-width: 1400px;
     margin: 0 auto;
     padding: 1em;
@@ -125,6 +128,7 @@ a {
 #selections section {
     background-color: #D9D9D9;
     padding: 2em;
+    border: 5px solid #d4a713;
     border-radius: 50%;
     margin-bottom: 1em;
 }
@@ -145,19 +149,24 @@ a {
     display: flex;
     font-size: 8em;
     justify-content: space-evenly;
+
     
 }
 
 #score div {
-    background-color: #D9D9D9;
+    background-color: #b68e39;
     padding: 0 .5em;
     border-radius: 10%;
+     user-select: none;
 }
 
 #result {
+    height: 3.5em;
+    vertical-align: middle;
     font-size: 2rem;
     font-weight: bold;
     margin: 2em;
     padding: 1em;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 2%;
 }
