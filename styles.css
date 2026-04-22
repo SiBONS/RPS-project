@@ -11,8 +11,8 @@ html {
 }
 
 body {
-    background-color: rgb(50, 75, 97);
-     font-family: "Merriweather Sans", sans-serif;
+    background-color: #3a5f7a;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
      font-weight: 300;
      line-height: 1.5;
      color: aliceblue;
@@ -25,10 +25,14 @@ a {
     color: inherit;
 }
 
+li {
+    list-style-type: none;
+}
+
 #nav {
     color: aliceblue;
     background-color: #b68e39;
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: 0 auto;
     padding: 1em;
 }
@@ -106,7 +110,8 @@ a {
 
 /* GAME SECTION */
 
- #game {
+ #game,
+ #rules {
     max-width: 1100px;
     margin: 1em auto;
     border-radius: 6px;
@@ -133,10 +138,23 @@ a {
     margin-bottom: 1em;
 }
 
+#selections section:hover {
+    transform: scale(1.1);
+}
+
 
 #selections img {
     max-width: 160px;
 
+}
+
+.emoji {
+    font-size: 120px;
+    cursor: pointer;
+}
+
+#rock-emoji:hover {
+    transform: scale(1.4);
 }
 
 #selections img:hover {
@@ -170,3 +188,58 @@ a {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 2%;
 }
+
+#score-name {
+   display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+    gap: 27%;
+}
+
+/*RULES SECTION*/
+
+ .step-num {
+      background: #c9942a;
+      color: #fff;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.5;
+    }
+
+    .steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .button {
+        display: inline-block;
+        font-size: 1.75em;
+        font-weight: 600;
+        background-color: #c9942a;
+        padding: .75em 2em;
+        border-radius: 2%;
+    }
+
+    .button:hover {
+        background-color:rgba(255,255,255,0.9); 
+        color: #c9942a;
+        transition: 420ms ease-in-out;
+    }

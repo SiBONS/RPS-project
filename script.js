@@ -17,10 +17,14 @@ cpuScoreElement.innerHTML = cpuScore;
 let result = document.getElementById("result");
 
 // this function sets out the display of the result and returns an empty string with a timeout
-// function revertDefault() {
-//     setTimeout(() => {
-//         result.innerHTML = "";}, 1000);
-//     }
+function revertDefault() {
+    setTimeout(() => {
+        result.innerHTML = "";
+        rockChoice.style.backgroundColor = "white";
+        paperChoice.style.backgroundColor = "white";
+        scissorsChoice.style.backgroundColor = "white";
+    }, 1500);
+    }
 
 // paperChoice.addEventListener("click", function() {
 //     result.innerHTML = "Paper!";
@@ -30,13 +34,13 @@ let result = document.getElementById("result");
 function cpuPlayer() {
     let cpuChoice = Math.floor(Math.random() * 3 + 1);
     if(cpuChoice === 1) {
-    rockChoice.style.backgroundColor = "yellow";
+    rockChoice.style.backgroundColor = "rgba(11, 63, 131, 0.87)";
     return "rock";
 }   else if(cpuChoice === 2) {
-    paperChoice.style.backgroundColor = "green";
+    paperChoice.style.backgroundColor = "rgba(11, 63, 131, 0.87)";
     return "paper";
 } else {
-    scissorsChoice.style.backgroundColor = "orange";
+    scissorsChoice.style.backgroundColor = "rgba(11, 63, 131, 0.87)";
    return "scissors";
 }
 }
@@ -51,8 +55,8 @@ rockChoice.addEventListener("click", function() {
     } else {
         result.innerHTML = "You lose! Paper beats rock!";
         cpuScoreElement.innerHTML++;
-
     }
+    revertDefault();
 })
 
 paperChoice.addEventListener("click", function() {
@@ -65,8 +69,8 @@ paperChoice.addEventListener("click", function() {
         cpuScoreElement.innerHTML++;
     } else {
         result.innerHTML = "No points. Paper VS paper.";
-
     }
+    revertDefault();
 })
 
 scissorsChoice.addEventListener("click", function() {
@@ -79,8 +83,8 @@ scissorsChoice.addEventListener("click", function() {
     } else {
         result.innerHTML = "You won. Cuting the paper weeee!";
         humanScoreElement.innerHTML++;
-
     }
+    revertDefault();
 })
 
 
