@@ -106,6 +106,5 @@ function endGame() {
     } else if (cpuScore === 5) {
         result.innerHTML = "Computer wins this game!";
         disableButtons();
-        revertDefault();
     }
 }
