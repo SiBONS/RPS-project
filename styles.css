@@ -124,9 +124,9 @@ li {
 #selections {
     display: flex;
     justify-content: space-around;
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    height: 240px;
+    height: 20vh;
 
 }
 
@@ -138,44 +138,62 @@ li {
     margin-bottom: 1em;
 }
 
+
+
+
 #selections section:hover {
+    background-color: #678caf;
     transform: scale(1.1);
 }
 
 
-#selections img {
-    max-width: 160px;
-
-}
 
 .emoji {
-    font-size: 120px;
+    font-size: 80px;
     cursor: pointer;
+     user-select: none;
 }
 
-#rock-emoji:hover {
-    transform: scale(1.4);
-}
 
-#selections img:hover {
-    transform: scale(1.1);
-    transition: 200ms ease-in-out;
-   
+.message {
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 5em;
 }
 
 #score {
     display: flex;
-    font-size: 8em;
     justify-content: space-evenly;
-
+    max-width: 500px;
+    margin: auto;
     
 }
 
+.score-item {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1em;
+}
+
 #score div {
-    background-color: #b68e39;
-    padding: 0 .5em;
-    border-radius: 10%;
-     user-select: none;
+    background-color: #1e3a4f;
+    width: 120px;
+    height: 120px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    font-weight: 700;
+    user-select: none;
+}
+
+.score-item h2 {
+    font-size: 1rem;
+    margin-top: 0.1em;
+    letter-spacing: 0.05em;
 }
 
 #result {
@@ -189,12 +207,64 @@ li {
     border-radius: 2%;
 }
 
-#score-name {
-   display: flex;
-    justify-content: center;
-    font-size: 1.3em;
-    gap: 27%;
+
+@media screen and (max-width:600px) {
+  #selections {
+    max-width: 440px;
+    height: 150px;
+    gap: 15px;
+    margin: auto;
+  }
+  .emoji {
+    font-size: 55px;
+  }
+
+  #result {
+    height: 3em;
+    font-size: 1.5rem;
+  }
+
+  .message {
+    margin-top: 2.2em;
+  }
+
+  #nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  .first-link {
+    margin: 0;
+    text-align: center;
+    padding: 1em;
+  }
+   
+
 }
+
+
+#score-name {
+    margin: auto;
+   display: flex;
+    justify-content: space-evenly;
+    max-width: 510px;
+    text-align: center;
+}
+
+#computer-name {
+    margin-left: 70px;
+}
+
+#human-name {
+    margin-left: 25px;
+}
+
+#new-game {
+    display: none;
+    max-width: 250px;
+    margin: auto;
+}
+
 
 /*RULES SECTION*/
 
@@ -233,13 +303,13 @@ li {
         display: inline-block;
         font-size: 1.75em;
         font-weight: 600;
-        background-color: #c9942a;
+        background-color: #678caf;
         padding: .75em 2em;
         border-radius: 2%;
     }
 
     .button:hover {
         background-color:rgba(255,255,255,0.9); 
-        color: #c9942a;
+        color: #678caf;
         transition: 420ms ease-in-out;
     }

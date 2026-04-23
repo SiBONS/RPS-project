@@ -15,27 +15,42 @@ cpuScoreElement.innerHTML = cpuScore;
 
 let result = document.getElementById("result");
 
+result.innerHTML = "Pick a weapon to start!"
 
+
+let cpuRock = document.getElementById("cpu-rock")
+let cpuPaper = document.getElementById("cpu-paper");
+let cpuScissors = document.getElementById("cpu-scissors");
 
 function revertDefault() {
     setTimeout(() => {
         // result.innerHTML = "";
-        rockChoice.style.backgroundColor = "white";
-        paperChoice.style.backgroundColor = "white";
-        scissorsChoice.style.backgroundColor = "white";
-    }, 1500);
+        rockChoice.style.backgroundColor = "";
+        paperChoice.style.backgroundColor = "";
+        scissorsChoice.style.backgroundColor = "";
+        cpuRock.innerHTML = "";
+        cpuPaper.innerHTML = "";
+        cpuScissors.innerHTML = "";
+        
+    }, 1000);
 }
+
+
 
 function cpuPlayer() {
     let cpuChoice = Math.floor(Math.random() * 3 + 1);
     if (cpuChoice === 1) {
-        rockChoice.style.backgroundColor = "rgba(11, 63, 131, 0.87)";
+        rockChoice.style.backgroundColor = "rgba(91, 97, 105, 0.87)";
+        cpuRock.innerHTML = "CPU CHOSE ROCK";
+        revertDefault();
         return "rock";
     } else if (cpuChoice === 2) {
-        paperChoice.style.backgroundColor = "rgba(11, 63, 131, 0.87)";
+        paperChoice.style.backgroundColor = "rgba(91, 97, 105, 0.87)";
+        cpuPaper.innerHTML = "CPU chose Paper";
         return "paper";
     } else {
-        scissorsChoice.style.backgroundColor = "rgba(11, 63, 131, 0.87)";
+        scissorsChoice.style.backgroundColor = "rgba(91, 97, 105, 0.87)";
+         cpuScissors.innerHTML = "CPU CHOSE Scissors";
         return "scissors";
     }
 }
@@ -54,12 +69,15 @@ function updateScore(winner) {
 rockChoice.addEventListener("click", function() {
     let cpu = cpuPlayer();
     if (cpu === "rock") {
-        result.innerHTML = "It is a tie! No points";
+        result.innerHTML = "🪨 vs 🪨 — Tie!";
+        result.style.backgroundColor = "#4c6c77";
     } else if (cpu === "scissors") {
-        result.innerHTML = "You won! Rock beats scissors!";
+        result.innerHTML = "🪨 beats ✂️ — You win!";
+        result.style.backgroundColor = "#427076";
         updateScore("human"); 
     } else {
-        result.innerHTML = "You lose! Paper beats rock!";
+        result.innerHTML = "📄 beats 🪨 — Computer wins!";
+        result.style.backgroundColor = "#565c72";
         updateScore("cpu"); 
     }
     revertDefault();
@@ -68,13 +86,16 @@ rockChoice.addEventListener("click", function() {
 paperChoice.addEventListener("click", function() {
     let cpu = cpuPlayer();
     if (cpu === "rock") {
-        result.innerHTML = "You won! Paper beats rock!";
+        result.innerHTML = "📄 beats 🪨 — You win!";
+        result.style.backgroundColor = "#427076";
         updateScore("human");
     } else if (cpu === "scissors") {
-        result.innerHTML = "You lose! Scissors cut out the hell of ya!";
+        result.innerHTML = "✂️ beats 📄 — Computer wins!";
+        result.style.backgroundColor = "#565c72";
         updateScore("cpu");
     } else {
-        result.innerHTML = "No points. Paper VS paper.";
+        result.innerHTML = "📄 vs 📄 — Tie!";
+        result.style.backgroundColor = "#4c6c77";
     }
     revertDefault();
 });
@@ -82,13 +103,17 @@ paperChoice.addEventListener("click", function() {
 scissorsChoice.addEventListener("click", function() {
     let cpu = cpuPlayer();
     if (cpu === "rock") {
-        result.innerHTML = "You lose! Rock destroyed you!";
+        result.innerHTML = "🪨 beats ✂️ — Computer wins!";
+        result.style.backgroundColor = "#565c72";
         updateScore("cpu");
     } else if (cpu === "scissors") {
         result.innerHTML = "It is a tie! No points";
+        result.innerHTML = "✂️ vs ✂️ — Tie!";
+        result.style.backgroundColor = "#4c6c77";
     } else {
-        result.innerHTML = "You won. Cutting the paper weeee!";
-        updateScore("human");
+       result.innerHTML = "✂️ beats 📄 — You win!";
+       result.style.backgroundColor = "#427076";
+       updateScore("human");
     }
     revertDefault();
 });
@@ -116,12 +141,14 @@ function displayNewGame() {
 
 function endGame() {
     if (humanScore === 5) {
-        result.innerHTML = "You won this game!";
+        result.innerHTML = "🏆 You win the match!";
+        result.style.backgroundColor = "#427076";
         disableButtons();
         revertDefault();
         displayNewGame();
     } else if (cpuScore === 5) {
-        result.innerHTML = "Computer wins this game!";
+        result.innerHTML = "💻 Computer wins the match!";
+        result.style.backgroundColor = "#565c72";
         disableButtons();
         displayNewGame();
     }

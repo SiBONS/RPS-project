@@ -9,14 +9,14 @@
 <body>
    <nav id="nav">
     <ul>
-        <div class="first-link">
-             <li><h1>ROCK PAPER SCISSORS</h1></li>
-        </div>
-       <div class="second-link">
-            <li><a href="#main">ABOUT</a></li>
+        <li class="first-link">
+             <h1>ROCK PAPER SCISSORS</h1>
+        </li>
+       <ul class="second-link">
+            <li><a href="#about-text">ABOUT</a></li>
             <li><a href="#rules">RULES</a></li>
             <li><a href="#play">PLAY</a></li>
-       </div>
+       </ul>
     </ul>
    </nav>
    <section id="main">
@@ -41,38 +41,43 @@
         <li><span class="step-num">4</span>The first player to reach 5 points wins the match!</li>
       </ul>
       </div>
-      <a class="button" href="#play">PLAY</a>
    </section>
    
    <section id="game">
-        <h2 id="play">CHOOSE YOUR WEAPON!</h2>
+     
         <div id="selections">
+             <span id="play"></span>
              <section id="rock">
             <!-- <img id="rock-img" src="images/rock.png" alt=""> -->
              <span class="emoji">🪨</span>
+             <p class="message" id="cpu-rock"></p>
         </section>
         <section id="paper">
             <!-- <img id="paper-img" src="images/paper.png" alt=""> -->
              <span class="emoji">📄</span>
+             <p class="message" id="cpu-paper"></p>
         </section>
         <section id="scissors">
             <!-- <img id="scissors-img" src="images/scissor.png" alt=""> -->
             <span class="emoji">✂️</span>
+            <p class="message" id="cpu-scissors"></p>
         </section>
         </div>
         <p id="result"></p>
         <a class="button" id="new-game" href="#play">NEW GAME</a>
         <h2>SCORE</h2>
    <section id="score">
-        <div id="user-score"></div>   
-        <div id="cpu-score"></div>
-   </section>
+    <div class="score-item">
+        <div id="user-score"></div>
+        <h2>HUMAN</h2>    
+    </div>
+    
+    <div class="score-item">
+        <div id="cpu-score">0</div>
+         <h2>COMPUTER</h2>
+    </div>
    
-   <div id="score-name">
-    <h2 id="human-name">HUMAN</h2>
-    <h2 id="computer-name">COMPUTER</h2>
-   </div>
-   </section>
+</section>
    <script src="script.js" defer></script>
 </body>
 </html>
