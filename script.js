@@ -1,3 +1,5 @@
+// declaring the variables
+
 let rockChoice = document.getElementById("rock");
 let paperChoice = document.getElementById("paper");
 let scissorsChoice = document.getElementById("scissors");
@@ -13,9 +15,11 @@ cpuScoreElement.innerHTML = cpuScore;
 
 let result = document.getElementById("result");
 
+
+
 function revertDefault() {
     setTimeout(() => {
-        result.innerHTML = "";
+        // result.innerHTML = "";
         rockChoice.style.backgroundColor = "white";
         paperChoice.style.backgroundColor = "white";
         scissorsChoice.style.backgroundColor = "white";
@@ -98,13 +102,35 @@ function disableButtons() {
         rockChoice.style.opacity = "0.5"
 }
 
+let newGame = document.getElementById("new-game");
+
+newGame.addEventListener("click", function() {
+    window.location.reload();
+})
+
+function displayNewGame() {
+    if (humanScore >= 5 || cpuScore >= 5) {
+        newGame.style.display = "block";
+    }
+}
+
 function endGame() {
     if (humanScore === 5) {
         result.innerHTML = "You won this game!";
         disableButtons();
         revertDefault();
+        displayNewGame();
     } else if (cpuScore === 5) {
         result.innerHTML = "Computer wins this game!";
         disableButtons();
+        displayNewGame();
     }
 }
+
+
+
+
+
+
+
+
