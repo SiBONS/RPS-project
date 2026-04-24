@@ -29,36 +29,10 @@ li {
     list-style-type: none;
 }
 
-#nav {
-    color: aliceblue;
-    background-color: #b68e39;
-    /* max-width: 1400px; */
-    margin: 0 auto;
-    padding: 1em;
-}
-
-.first-link {
-    margin-left: 3em;
-}
-
-#nav ul,
-#nav .second-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-
-}
-
-.second-link {
-    display: inline-block;
-    margin-right: 50px;
-}
-
-.second-link li {
-    margin-left: 1em;
-    font-weight: 500;
-    font-size: 1.1rem;
+header {
+    padding: 2em;
+    text-align: center;
+    background-color: #113638;
 }
 
 /*styling for the first section - ABOUT */
@@ -74,24 +48,6 @@ li {
     vertical-align: middle;
 }
 
-@media screen and (max-width: 920px) {
-    #main {
-        display: block;
-        margin: 0 auto;
-        max-width: 800px;
-        font-size: 1.1rem;
-    }
-
-    #main-image img,
-    #about-text {
-        margin: 1em auto;
-    }
-
-    #nav {
-        font-size: .875rem;
-    }
-
-    }
    
 
 
@@ -124,13 +80,15 @@ li {
 #selections {
     display: flex;
     justify-content: space-around;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
-    height: 20vh;
+    padding: 0;
 
 }
 
 #selections section {
+    width: 120px;
+    height: 120px;
     background-color: #D9D9D9;
     padding: 2em;
     border: 5px solid #d4a713;
@@ -149,9 +107,10 @@ li {
 
 
 .emoji {
-    font-size: 80px;
+    font-size: 40px;
     cursor: pointer;
      user-select: none;
+     pointer-events: none;
 }
 
 
@@ -159,7 +118,8 @@ li {
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    margin-top: 5em;
+    margin: 3em auto;
+    min-width: 60%;
 }
 
 #score {
@@ -208,40 +168,6 @@ li {
 }
 
 
-@media screen and (max-width:600px) {
-  #selections {
-    max-width: 440px;
-    height: 150px;
-    gap: 15px;
-    margin: auto;
-  }
-  .emoji {
-    font-size: 55px;
-  }
-
-  #result {
-    height: 3em;
-    font-size: 1.5rem;
-  }
-
-  .message {
-    margin-top: 2.2em;
-  }
-
-  #nav ul {
-    display: block;
-    text-align: center;
-  }
-
-  .first-link {
-    margin: 0;
-    text-align: center;
-    padding: 1em;
-  }
-   
-
-}
-
 
 #score-name {
     margin: auto;
@@ -251,13 +177,6 @@ li {
     text-align: center;
 }
 
-#computer-name {
-    margin-left: 70px;
-}
-
-#human-name {
-    margin-left: 25px;
-}
 
 #new-game {
     display: none;
@@ -268,36 +187,15 @@ li {
 
 /*RULES SECTION*/
 
- .step-num {
-      background: #c9942a;
-      color: #fff;
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
 
     .steps li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
+      align-items: center;
       font-size: 0.95rem;
       color: rgba(255,255,255,0.9);
-      line-height: 1.5;
+      line-height: 1.75;
+      font-size: 1.15rem;
     }
 
-    .steps {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
 
     .button {
         display: inline-block;
@@ -312,4 +210,42 @@ li {
         background-color:rgba(255,255,255,0.9); 
         color: #678caf;
         transition: 420ms ease-in-out;
+    }
+
+    .rules-heading {
+        font-size: 1.7rem;
+    }
+
+    .rules-sub {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 1.14rem;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 550px) {
+        html {
+            font-size: 70%;
+       }
+       #selections {
+        max-width: 400px;
+       }
+       #selections section {
+    width: 90px;
+    height: 90px;
+    background-color: #D9D9D9;
+    padding: .5em;
+
+}
+.emoji {
+    font-size: 45px;
+}
+
+.message {
+    font-size: 10px;
+    margin: 2em auto;
+    min-width: 70%;
+}
     }
