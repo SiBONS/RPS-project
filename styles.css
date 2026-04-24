@@ -36,7 +36,7 @@ li {
 header {
     padding: 2em;
     text-align: center;
-    background-color: #113638;
+   background-color: #1e3a4f;
 }
 
 h1 {
@@ -288,6 +288,7 @@ h1 {
 #rules {
     font-size: 1.6rem;
     padding: 1em;
+    padding-top: .25em;
 }
 section#score {
     height: 110px;
