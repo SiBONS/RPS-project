@@ -284,7 +284,7 @@ h1 {
     font-size: 1.1rem;
     margin: 1.75em;
     padding: .75em;
-    border-radius: none;
+    border-radius: unset;
 }
 
 #rules {
