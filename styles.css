@@ -239,7 +239,7 @@ h1 {
         text-align: center;
     }
 
-    small {
+    footer {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -247,7 +247,7 @@ h1 {
 
     }
 
-    small img {
+    footer img {
         display: block;
         width: 20px;
         height: 20px;
