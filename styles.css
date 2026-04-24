@@ -274,4 +274,9 @@ section#score {
     font-size: 2.8rem
 }
 
+ .button {
+        font-size: 1.45em;
+        padding: .35em 1.5em;
+    }
+
 }
